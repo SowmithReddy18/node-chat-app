@@ -7,6 +7,7 @@ const { getAcknowledgeMessage } = require('./utils/messages');
 const { addUser, removeUser, getUser, getUsersInRoom } = require('../src/utils/users')
 
 const rootPath = path.join(__dirname, '../public');
+const port = process.env.PORT || 3000;
 
 const app = express();
 const server = http.createServer(app);
@@ -54,6 +55,6 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(3000, () => {
+server.listen(port, () => {
     console.log(`app started on port ${3000}`);
 })
